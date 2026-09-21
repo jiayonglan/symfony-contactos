@@ -16,6 +16,27 @@ class ContactoRepository extends ServiceEntityRepository
         parent::__construct($registry, Contacto::class);
     }
 
+    public function startsWith($value): array
+
+{
+
+    return $this->createQueryBuilder('c')
+
+        ->andWhere('c.nombre LIKE :val')
+
+        ->setParameter('val', $value . '%')
+
+        ->orderBy('c.id', 'ASC')
+
+        ->getQuery()
+
+        ->getResult();
+
+    // La consula en sql sería SELECT nombre FROM contactos WHERE nombre LIKE ('$value%')
+
+}
+
+
     //    /**
     //     * @return Contacto[] Returns an array of Contacto objects
     //     */

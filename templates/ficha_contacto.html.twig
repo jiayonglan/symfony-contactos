@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Ficha del contacto{% endblock %}
+
+{% block body %}
+
+{% if contacto %}
+<h1>Ficha del contacto</h1>
+{%include 'partials/_contacto.html.twig' with {'contacto': contacto}%}
+{% else %}
+<p>No se ha encontrado el contacto</p>
+{% endif %}
+{% endblock %}
