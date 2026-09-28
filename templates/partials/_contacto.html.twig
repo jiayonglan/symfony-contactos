@@ -1,0 +1,9 @@
+<ul>
+    <li>
+        <a href="{{ path('contacto', {'codigo': contacto.id}) }}">
+            <strong>{{ contacto.nombre }}</strong>
+        </a>
+    </li>
+    <li><strong>Teléfono</strong>: {{ contacto.telefono }}</li>
+    <li><strong>E-mail</strong>: {{ contacto.email }}</li>
+</ul>
